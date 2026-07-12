@@ -25,12 +25,12 @@ EOT
     assignable_scopes  = optional(list(string))
     description        = optional(string)
     role_definition_id = optional(string)
-    permissions = optional(object({
+    permissions = optional(list(object({
       actions          = optional(list(string))
       data_actions     = optional(set(string))
       not_actions      = optional(list(string))
       not_data_actions = optional(set(string))
-    }))
+    })))
     role_management_policies = optional(map(object({
       scope = string
       activation_rules = optional(object({

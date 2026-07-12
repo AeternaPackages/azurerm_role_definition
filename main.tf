@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.role_definitions : {
       for k2, v2 in coalesce(v1.role_management_policies, {}) :
       "${k1}/${k2}" => merge(v2, {
-        role_definition_id = module.role_definitions.role_definitions["${k1}"].id
+        role_definition_id = module.role_definitions.role_definitions_id["${k1}"]
       })
     }
   ]...)

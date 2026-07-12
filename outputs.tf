@@ -1,4 +1,9 @@
 # --- azurerm_role_definition ---
+output "role_definitions_id" {
+  description = "Map of id values across all role_definitions, keyed the same as var.role_definitions"
+  value       = module.role_definitions.role_definitions_id
+}
+
 output "role_definitions_assignable_scopes" {
   description = "Map of assignable_scopes values across all role_definitions, keyed the same as var.role_definitions"
   value       = module.role_definitions.role_definitions_assignable_scopes
@@ -35,6 +40,11 @@ output "role_definitions_scope" {
 }
 
 # --- azurerm_role_management_policy ---
+output "role_management_policies_id" {
+  description = "Map of id values across all role_management_policies, keyed the same as var.role_management_policies"
+  value       = module.role_management_policies.role_management_policies_id
+}
+
 output "role_management_policies_activation_rules" {
   description = "Map of activation_rules values across all role_management_policies, keyed the same as var.role_management_policies"
   value       = module.role_management_policies.role_management_policies_activation_rules

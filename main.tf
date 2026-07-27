@@ -12,12 +12,12 @@ locals {
 }
 
 module "role_definitions" {
-  source           = "git::https://github.com/AeternaModules/azurerm_role_definition.git?ref=v4.80.0"
+  source           = "git::https://github.com/AeternaModules/azurerm_role_definition.git?ref=v4.81.0"
   role_definitions = local.role_definitions
 }
 
 module "role_management_policies" {
-  source                   = "git::https://github.com/AeternaModules/azurerm_role_management_policy.git?ref=v4.80.0"
+  source                   = "git::https://github.com/AeternaModules/azurerm_role_management_policy.git?ref=v4.81.0"
   role_management_policies = local.role_management_policies
   depends_on               = [module.role_definitions]
 }
